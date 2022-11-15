@@ -79,3 +79,45 @@ line-height: 1.7em;
 .card{
 	text-align: center;
 }
+.card{
+	background-color:#E2E1E1;
+	width:400px;
+	height:100px;
+	padding:9px;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+.card-header{
+	font-weight:bold;
+}
+.gravatar {
+float: left;
+margin-right: 10px;
+}
+.gravatar_edit {
+margin-top: 15px;
+}
+
+input, textarea, select, .uneditable-input {
+border: 1px solid #bbb;
+width: 100%;
+margin-bottom: 15px;
+
+}
+input {
+height: auto !important;
+}
+#error_explanation {
+color: red;
+ul {
+color: red;
+margin: 0 0 30px 0;
+}
+}
+.field_with_errors {
+@extend .has-error;
+.form-control {
+color: $state-danger-text;
+}
+}

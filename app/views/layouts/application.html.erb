@@ -11,33 +11,40 @@
 
   <body>
     <header class="navbar navbar-fixed-top bg-success">
-<div class="container">
-  <%= link_to "sample app", '#', id: "logo" %>
-  <nav>
-    <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home",'#' %></li>
-      <li><%= link_to "Sign up now!", signup_path%></li>
-      <li><%= link_to "Log in", '#' %></li>
-    </ul>
-  </nav>
-</div>
-</header>
-    <div class="container">
-        <%= yield %>
-    </div>
+      <div class="container">
+        <%= link_to "sample app", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",'#' %></li>
+                      <li><%= link_to "users", users_path %></li>
 
-    <footer class="footer">
-      <small>
-        The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-        by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
-      </small>
-      <nav>
-        <ul>
-          <li><%= link_to "About", '#' %></li>
-          <li><%= link_to "Contact", '#' %></li>
-          <li><a href="http://news.railstutorial.org/">News</a></li>
-        </ul>
-      </nav>
-    </footer>
+            <li><%= link_to "Sign up now!", signup_path%></li>
+            <li><%= link_to "Log in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+
+      <div class="container">
+          <%= yield %>
+      </div>
+
+      <footer class="footer">
+        <small>
+          The <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+          by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
+        </small>
+          <nav>
+            <ul>
+              <li><%= link_to "About", '#' %></li>
+
+              <li><%= link_to "Contact", '#' %></li>
+              <li><a href="http://news.railstutorial.org/">News</a></li>
+            </ul>
+          </nav>
+      </footer>
   </body>
 </html>
