@@ -1,10 +1,18 @@
 <h2> All Users </h2>
+
 	<% @users.each do |user| %>
 		<div class="card col-sm-12 my-auto">		
 		  <div class="card-header">	  
 		      <%= user.name %>
 		  </div>
+		  <% if current_user == user %>
+		   <%= link_to "Edit Profile", edit_user_path(user) %>
+		  <% end %>
 	      <br>   
 	    </div>
    <% end %><br>
 
+<div class="apple_pagination">
+    
+    <%= will_paginate @users, :container => false %>
+  </div>
