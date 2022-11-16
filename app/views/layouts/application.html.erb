@@ -16,10 +16,16 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",'#' %></li>
+                 <% if logged_in? %>
                       <li><%= link_to "users", users_path %></li>
+                        <li><%= link_to "Log out", logout_path , method: :delete %></li>
+                  <% else %> 
+                         <li><%= link_to "Sign up now!", signup_path%></li>
+                         <li><%= link_to 'log in ', login_path %></li>
+                    <% end %>     
 
-            <li><%= link_to "Sign up now!", signup_path%></li>
-            <li><%= link_to "Log out", logout_path , method: :delete %></li>
+           
+            
           </ul>
         </nav>
       </div>
