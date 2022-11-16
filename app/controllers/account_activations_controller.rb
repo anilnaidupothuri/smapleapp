@@ -1,0 +1,3 @@
+class AcountActivationController < ApplicationController 
+
+end
